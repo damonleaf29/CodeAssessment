@@ -10,7 +10,7 @@ import sys
 def getCoordinates(ip_address, api_key):
     base_url = "http://api.ipstack.com/"
     response = requests.get(f"{base_url}{ip_address}?access_key={api_key}&fields={'latitude,longitude'}")
-    data = response.json()
+    data = response.json() #data is returned as a dictionary
     latitude = data["latitude"]
     longitude = data["longitude"]
     return latitude, longitude  # Returns the lat and long as a tuple of Strings
